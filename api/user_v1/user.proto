@@ -20,7 +20,10 @@ message CreateRequest {
   string email = 2;
   string password = 3;
   string password_confirm = 4;
-  enum role = 5;
+  enum role {
+    user = 0;
+    admin = 1;
+  }
 }
 
 message CreateResponse {
@@ -35,7 +38,10 @@ message GetResponse {
   int64 id = 1;
   string name = 2;
   string email = 3;
-  enum role = 4;
+  enum role {
+      user = 0;
+      admin = 1;
+    }
   google.protobuf.Timestamp created_at = 5;
   google.protobuf.Timestamp updated_at = 6;
 }
